@@ -1,0 +1,34 @@
+
+<?if ($this->pageCount) {?>
+	<div class="paginationControl">
+		<ul class="prevNext">
+		<!-- Next page link -->
+			<!-- Previous page link -->
+			<?if (isset($this->previous)) {?>
+				<li><a class="prev" alt="Previous page (Ctrl + ←)" href="<?=$this->url(array('page' => $this->previous))?>">←there</a></li>
+			<? } else { ?>
+				<li><span class="prev disabled">←there</span></li>
+			<?}?>
+			<!-- \Previous page link -->
+
+			<!-- Next page link -->
+			<?if (isset($this->next)) {?>
+				<li><a class="next" alt="Next page (Ctrl + →)" href="<?=$this->url(array('page' => $this->next))?>">here→</a></li>
+			<?} else {?>
+				<li><span class="next disabled">here→</span></li>
+			<?}?>
+			<!-- \Next page link -->
+		</ul>
+
+		<!-- Numbered page links -->
+		<ul class="navPages">
+		<?foreach ($this->pagesInRange as $page) {?>
+			<?if ($page != $this->current) {?>
+				<li><a href="<?=$this->url(array('page' => $page))?>"><?=$page?></a></li>
+			<?} else {?>
+				<li><span class="current"><?=$page?></span></li>
+			<?}?>
+		<?}?>
+		</ul>
+	</div>
+<?}?>

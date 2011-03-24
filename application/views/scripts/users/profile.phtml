@@ -1,0 +1,17 @@
+<div class="userInfo">
+	<p>Login <strong><?=$this->user->getLogin()?></strong></p>
+	<p>Name <strong><?=$this->user->getName()?></strong></p>
+	<p>Second name <strong><?=$this->user->getSecondName()?></strong></p>
+	<p>Last visit <strong><?=$this->Date($this->user->getLastVisitTime())?></strong></p>
+
+	<div class="links">
+		<?if ($this->user->getId() != $this->users()->getCurrentUser()->getId()) {?>
+		<?if (!$this->friends()->isAFriend($this->user->getId())) {?>
+		<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'add', 'id' => $this->user->getId()))?>">Add <?=$this->user->getLogin()?> to friends</a></p>
+		<?}?>
+		<p><a href="<?=$this->url(array('controller' => 'mails', 'action' => 'new', 'id' => $this->user->getId()))?>">Write to <?=$this->user->getLogin()?></a></p>
+		<?}?>
+		<p><a href="<?=$this->url(array('controller' => 'users', 'action' => 'profile', 'id' => $this->user->getId()))?>">Link to <?=$this->user->getLogin()?> profile</a></p>
+		<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'user', 'id' => $this->user->getId()))?>">Friends of <?=$this->user->getLogin()?></a></p>
+	</div>
+</div>

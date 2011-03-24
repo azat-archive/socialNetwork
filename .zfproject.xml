@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<projectProfile type="default" version="1.10">
+  <projectDirectory>
+    <projectProfileFile filesystemName=".zfproject.xml"/>
+    <applicationDirectory classNamePrefix="Application_">
+      <apisDirectory enabled="false"/>
+      <configsDirectory>
+        <applicationConfigFile type="ini"/>
+      </configsDirectory>
+      <controllersDirectory>
+        <controllerFile controllerName="Index">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Error"/>
+        <controllerFile controllerName="Mails">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Friends">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="user"/>
+        </controllerFile>
+        <controllerFile controllerName="Users">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="signup"/>
+          <actionMethod actionName="login"/>
+          <actionMethod actionName="logout"/>
+          <actionMethod actionName="profile"/>
+          <actionMethod actionName="resetPassword"/>
+        </controllerFile>
+      </controllersDirectory>
+      <formsDirectory>
+        <formFile formName="UsersSignup"/>
+        <formFile formName="MailsSend"/>
+        <formFile formName="UsersLogin"/>
+      </formsDirectory>
+      <layoutsDirectory enabled="false"/>
+      <modelsDirectory>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Users"/>
+          <dbTableFile dbTableName="Friends"/>
+          <dbTableFile dbTableName="Mail"/>
+        </dbTableDirectory>
+        <modelFile modelName="UsersMapper"/>
+        <modelFile modelName="FriendsMapper"/>
+        <modelFile modelName="MailsMapper"/>
+        <modelFile modelName="Users"/>
+        <modelFile modelName="Friends"/>
+        <modelFile modelName="Mails"/>
+        <modelFile modelName="Items"/>
+      </modelsDirectory>
+      <modulesDirectory enabled="false"/>
+      <viewsDirectory>
+        <viewScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Error">
+            <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Mails">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Friends">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="signup"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="login"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="logout"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Friends">
+            <viewScriptFile forActionName="user"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="profile"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="resetPassword"/>
+          </viewControllerScriptsDirectory>
+        </viewScriptsDirectory>
+        <viewHelpersDirectory/>
+        <viewFiltersDirectory enabled="false"/>
+      </viewsDirectory>
+      <bootstrapFile filesystemName="Bootstrap.php"/>
+    </applicationDirectory>
+    <dataDirectory enabled="false">
+      <cacheDirectory enabled="false"/>
+      <searchIndexesDirectory enabled="false"/>
+      <localesDirectory enabled="false"/>
+      <logsDirectory enabled="false"/>
+      <sessionsDirectory enabled="false"/>
+      <uploadsDirectory enabled="false"/>
+    </dataDirectory>
+    <docsDirectory>
+      <file filesystemName="README.txt"/>
+    </docsDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false"/>
+    </libraryDirectory>
+    <publicDirectory>
+      <publicStylesheetsDirectory enabled="false"/>
+      <publicScriptsDirectory enabled="false"/>
+      <publicImagesDirectory enabled="false"/>
+      <publicIndexFile filesystemName="index.php"/>
+      <htaccessFile filesystemName=".htaccess"/>
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false"/>
+    <temporaryDirectory enabled="false"/>
+    <testsDirectory>
+      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
+      <testApplicationDirectory>
+        <testApplicationBootstrapFile filesystemName="bootstrap.php"/>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile filesystemName="MailsControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="FriendsControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="UsersControllerTest.php"/>
+        </testApplicationControllerDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory>
+        <testLibraryBootstrapFile filesystemName="bootstrap.php"/>
+      </testLibraryDirectory>
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>

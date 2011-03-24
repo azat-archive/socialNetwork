@@ -1,0 +1,21 @@
+<div class="messagesList">
+	<?if ($this->paginator->getCurrentItems()) {?>
+	<?foreach ($this->paginator->getCurrentItems() as $message) {?>
+	<div class="messageInfo<?=$message->getReaded() == 'n' ? ' notRead' : ' read'?>">
+		<p><a href="<?=$this->url(array('controller' => 'mails', 'action' => 'message', 'id' => $message->getId()))?>">Open</a></p>
+		<p><?=$message->getMessage()?></p>
+
+		<div class="links">
+			<p><a href="<?=$this->url(array('controller' => 'mails', 'action' => 'new', 'id' => $message->getUid()))?>">Reply to <?=$message->getLogin()?></a></p>
+		</div>
+		<p>At: <strong><?=$this->Date($message->getCreateTime())?></strong></p>
+	</div>
+	<?}?>
+	<?} else {?>
+	<h4 class="noYet">You don't have send messages yet</h4>
+	<?}?>
+</div>
+
+<div class="paginator">
+	<?=$this->paginator?>
+</div>

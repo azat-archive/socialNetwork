@@ -1,0 +1,17 @@
+<div class="usersList">
+	<?foreach ($this->paginator->getCurrentItems() as $user) {?>
+	<div class="userInfo">
+		<p>Login <strong><?=$user->getLogin()?></strong></p>
+
+		<div class="links">
+			<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'add', 'id' => $user->getId()))?>">Add <?=$user->getLogin()?> to friends</a></p>
+			<p><a href="<?=$this->url(array('controller' => 'mails', 'action' => 'new', 'id' => $user->getId()))?>">Write to <?=$user->getLogin()?></a></p>
+			<p><a href="<?=$this->url(array('controller' => 'users', 'action' => 'profile', 'id' => $user->getId()))?>">Link to <?=$user->getLogin()?> profile</a></p>
+		</div>
+	</div>
+	<?}?>
+</div>
+
+<div class="paginator">
+	<?=$this->paginator?>
+</div>

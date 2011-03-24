@@ -1,0 +1,22 @@
+<div class="usersList friendsList friendsRequests">
+	<?if ($this->paginator->getCurrentItems()) {?>
+	<?foreach ($this->paginator->getCurrentItems() as $user) {?>
+	<div class="userInfo">
+		<p>Login <strong><?=$user->getLogin()?></strong></p>
+
+		<div class="links">
+			<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'confirm', 'id' => $user->getId()))?>">Confirm <?=$user->getLogin()?></a>
+			<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'delete', 'id' => $user->getId()))?>">Refuse <?=$user->getLogin()?></a>
+			<p><a href="<?=$this->url(array('controller' => 'mails', 'action' => 'new', 'id' => $user->getId()))?>">Write to <?=$user->getLogin()?></a>
+			<p><a href="<?=$this->url(array('controller' => 'users', 'action' => 'profile', 'id' => $user->getId()))?>">Link to <?=$user->getLogin()?> profile</a>
+		</div>
+	</div>
+	<?}?>
+	<?} else {?>
+	<h4 class="noYet">You don't have any requests</h4>
+	<?}?>
+</div>
+
+<div class="paginator">
+	<?=$this->paginator?>
+</div>

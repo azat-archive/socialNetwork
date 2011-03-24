@@ -1,0 +1,28 @@
+<div class="usersList friendsList">
+	<?if ($this->paginator->getCurrentItems()) {?>
+	<?foreach ($this->paginator->getCurrentItems() as $user) {?>
+	<div class="userInfo">
+		<p>Login <strong><?=$user->getLogin()?></strong></p>
+
+		<div class="links">
+			<?if ($user->getConfirm() == 'y') {?>
+			<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'delete', 'id' => $user->getId()))?>">Delete <?=$user->getLogin()?> from friends</a>
+			<?} else {?>
+			<p><a href="<?=$this->url(array('controller' => 'friends', 'action' => 'add', 'id' => $user->getId()))?>">Add <?=$user->getLogin()?> to friends</a>
+			<?}?>
+			<p><a href="<?=$this->url(array('controller' => 'mails', 'action' => 'new', 'id' => $user->getId()))?>">Write to <?=$user->getLogin()?></a>
+			<p><a href="<?=$this->url(array('controller' => 'users', 'action' => 'profile', 'id' => $user->getId()))?>">Link to <?=$user->getLogin()?> profile</a>
+		</div>
+	</div>
+	<?}?>
+	<?} else {?>
+	<h4 class="noYet">
+		<?=($this->users()->getCurrentUser()->getId() != $this->id ? $this->user->getLogin() : 'You')?>
+		don't have friends yet
+	</h4>
+	<?}?>
+</div>
+
+<div class="paginator">
+	<?=$this->paginator?>
+</div>
